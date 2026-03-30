@@ -1,15 +1,97 @@
 body {
-  color: rgb(131, 216, 212);
+  background: linear-gradient(135deg, #dbeafe, #f8fafc);
+  font-family: 'Segoe UI', sans-serif;
+  color: #1f2937;
 }
 
-h1 {
-  text-align: center;
+/* Kártya */
+.card-custom {
+  border-radius: 20px;
+  border: none;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  transition: 0.3s;
 }
 
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Cím */
+.title {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #0d6efd;
+}
+
+/* Formula */
+.formula {
+  font-family: monospace;
+  font-size: 1.1rem;
+  background: #eef2ff;
+  border-left: 5px solid #6366f1;
+}
+
+/* Input */
+input {
+  border-radius: 10px !important;
+  border: 1px solid #cbd5e1 !important;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 2px rgba(13,110,253,0.2) !important;
+}
+
+/* Gomb */
+.btn-dark {
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0d6efd, #6366f1);
+  border: none;
+}
+
+.btn-dark:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0b5ed7, #4f46e5);
+}
+
+/* Eredmény */
+#result {
+  font-size: 1.2rem;
+}
+
+#results {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+/* Result box */
+.result-box {
+  min-height: 100px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+/* Kép */
 img {
-  
-  max-width: 500px;
-  max-height: 300px;
+  max-width: 100%;
+  max-height: 260px;
   display: block;
   margin: 0 auto;
+  border-radius: 12px;
 }
+
+/* Footer link */
+.footer-link a {
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.footer-link a:hover {
+  text-decoration: underline;
+}
+

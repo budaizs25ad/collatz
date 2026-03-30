@@ -1,36 +1,28 @@
 function collatz() {
+  const input = document.getElementById("szam");
+  const resultEl = document.getElementById("result");
+  const resultsEl = document.getElementById("results");
 
-  
-  var n = Math.abs(parseInt(document.getElementById("szam").value));
-  let k = ""; 
-  
-  if (isNaN(n) || n == 0) {
-    document.getElementById("result").innerHTML = "Adjon meg egy nem-nulla értéket!";
+  let n = Number(input.value);
+
+  // ellenőrzés
+  if (!Number.isInteger(n) || n <= 0) {
+    resultEl.textContent = "❌ Adj meg egy pozitív egész számot!";
+    resultsEl.textContent = "";
     return;
   }
 
-  
-  var i = 0;
+  let steps = 0;
+  let sequence = [n]; // tömbbe gyűjtjük
 
-  
-  while (n != 1) {
-    if ((n % 2) == 0) {
-      n = n / 2;
-    } else {
-      n = 3 * n + 1;
-    }
-
-  
-
-    if (n != 1) {
-    k = k + n.toString() + ", ";
-    } else {
-    k = k + n.toString();
-    }
-  
-    i++;
+  // számolás
+  while (n !== 1) {
+    n = (n % 2 === 0) ? n / 2 : 3 * n + 1;
+    sequence.push(n);
+    steps++;
   }
 
-  document.getElementById("result").innerHTML = i + " eséllyel futódott le, értékek:";
-  document.getElementById("results").innerHTML = k;
+  // kiírás
+  resultEl.textContent = `✅ Lépések száma: ${steps}`;
+  resultsEl.textContent = sequence.join(" → ");
 }
